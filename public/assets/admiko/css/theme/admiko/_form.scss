@@ -1,0 +1,252 @@
+.formPage {
+    max-width: 1200px;
+    .stored_image, .image_preview img {
+        border-radius: 7px;
+        max-width: 100px;
+        max-height: 100px;
+    }
+    .tableImage img {
+        max-width: 150px;
+        max-height: 100px;
+    }
+    .numbersWidth {
+        max-width: 210px;
+    }
+
+    .moneyWidth {
+        max-width: 180px;
+        border-top-right-radius: .25rem !important;
+        border-bottom-right-radius: .25rem !important;;
+    }
+    .showMap {
+        min-height: 300px;
+    }
+    .form-control, .form-select {
+        //padding: .3rem .7rem .25rem .7rem;
+        font-size: .9375rem;
+        border: 1px solid $form-input-border-color;
+        border-radius: $border-radius;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s;
+        &:focus {
+            border-color: $form-input-border-focus-color;
+        }
+    }
+    .form-check-input {
+        border-color: $form-input-border-color;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s;
+        &:focus {
+            border-color: $form-input-border-focus-color;
+        }
+    }
+    .multiSelectSort,.multiCheckboxSort{
+        i.fa-arrows-alt:hover {
+            cursor: all-scroll;
+        }
+    }
+
+    .select2-container--default .select2-selection--multiple {
+        padding: 4px 0 0 0;
+        font-size: .9375rem;
+        min-height: calc(1.5em + .75rem + 2px);
+        border: 1px solid $form-input-border-color;
+        border-radius: $border-radius;
+        &:focus {
+            border-color: $form-input-border-focus-color;
+        }
+        &::after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+    }
+    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+        background-color: #f1f1f1;
+        border: 0px solid #ced4da;
+        border-radius: $border-radius;
+        cursor: default;
+        float: left;
+        font-size: 15px;
+        margin: 0 0 4px 4px;
+        padding: 1px 0;
+    }
+    .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+        border-right: unset;
+        position: relative;
+    }
+    .select2-container .select2-search--inline .select2-search__field {
+        margin-top: 3px;
+        margin-left: 9px;
+    }
+    .select2-container--default .select2-selection--multiple .select2-selection__clear {
+        margin-right: 8px;
+        margin-top: 0px;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__clear {
+        margin-right: 25px;
+    }
+    .select2-container--default .select2-selection--single{
+        display: block;
+        width: 100%;
+        height: calc(1.5em + .75rem + 2px);
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        vertical-align: middle;
+        background-color: #fff;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right .75rem center;
+        background-size: 16px 12px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: .3rem .7rem .25rem .7rem;
+        font-size: .9375rem;
+        border: 1px solid $form-input-border-color;
+        border-radius: 0.25rem;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        padding: 0;
+        line-height: 1.8;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+        display: none;
+    }
+
+    .input-group-text {
+        //padding: .25rem .7rem;
+        font-size: .9375rem;
+        border: 1px solid #ced4da;
+        border-radius: $border-radius;
+    }
+    .invalid-feedback {
+        font-size: 100%;
+    }
+    .form-control-textarea {
+        height: unset;
+    }
+    .tox-tinymce {
+        border: 1px solid #ced4da;
+        border-radius: $border-radius;
+    }
+
+    .form-group {
+        padding: 0.5rem 0;
+        .form-checkbox {
+            margin-bottom: 0;
+            padding-top: 0;
+        }
+        .form-check {
+            margin-bottom: 0;
+        }
+        &:hover {
+            background-color: $table-row-bg-color;
+        }
+        &.admiko_separator label {
+            font-size: 1.1rem;
+        }
+    }
+    &.viewPage {
+        .form-group:nth-child(2n+1) {
+            background-color: $table-row-bg-color;
+        }
+    }
+    .form-actions {
+        padding: 0.5rem 0;
+    }
+
+    legend {
+        font-size: 0.94rem;
+        font-weight: 400;
+        padding: 1.25rem 1.25rem 0 1.25rem;
+        margin: 0;
+    }
+
+    .form-control.is-valid, .was-validated .form-control:valid, .custom-select.is-valid, .was-validated .custom-select:valid {
+        border-color: #ced4da;
+        padding: .375rem .75rem;
+        background: unset;
+    }
+    .form-control.is-valid:focus, .was-validated .form-control:valid:focus {
+        border: #ced4da solid 1px;
+        box-shadow: unset;
+    }
+    .text-muted {
+        display: block;
+    }
+    .themeSelect label {
+        cursor: pointer;
+    }
+}
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    border: 1px solid $form-input-border-color;
+    border-radius: 0.25rem;
+}
+.select2-dropdown {
+    border: 1px solid $form-input-border-color;
+    border-radius: 0.25rem;
+}
+.select2-container--default .select2-results__option--selected {
+    background-color: $page-background;
+    color: $link-color;
+}
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: $page-background;
+    color: $link-hover-color;
+}
+//calendar
+.bootstrap-datetimepicker-widget {
+    .collapsing {
+        -webkit-transition: none;
+        transition: none;
+    }
+    &.dropdown-menu {
+        width: auto !important;
+    }
+
+    .timepicker {
+        padding: 0 10px 0 0 !important;
+        td {
+            width: 25% !important;
+            height: 36px !important;
+            line-height: 36px !important;
+            a[data-action] {
+                padding: 0 !important;
+            }
+            span {
+                height: 36px !important;
+                line-height: 36px !important;
+                width: 100% !important;
+                display: block !important;
+            }
+        }
+    }
+    table {
+        th {
+            border-radius: unset !important;
+            border-top: unset !important;
+            padding: 9px 9px 7px 9px;
+
+        }
+        td {
+            border-radius: unset !important;
+            span {
+                border-radius: unset !important;
+                margin: 0 !important;
+            }
+            &.day {
+                padding: 7px 10px;
+            }
+        }
+    }
+    .btn {
+        width: auto;
+        box-shadow: unset;
+    }
+}

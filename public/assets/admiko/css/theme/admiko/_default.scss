@@ -1,0 +1,381 @@
+@import url(https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap);
+
+$font-color: #4a5568;
+$link-color: #4a5568;
+$link-hover-color: #3789ff;
+$page-background: #edf2f6;
+$border-radius: 0.25rem;
+$white-color: #fff;
+
+$btn-color: #4a5568;
+$btn-hover-color: #2d3748;
+
+$header-bg-color: #2d3747;
+$header-navbar-bg-color: #1a202c;
+$header-navbar-brand-color: #fff;
+$header-sidebar-user-color: #fff;
+$header-navbar-title-color: #ececec;
+$header-navbar-link-color: #ececec;
+$header-navbar-icon-color: #ececec;
+$header-navbar-hover-color: #3789ff;
+$header-navbar-active-color: #3789ff;
+$header-navbar-link-bg-color: #252e3c;
+
+$table-row-color: #515f6d;
+$table-row-bg-color: #f4f7fc;
+$table-row-hover-bg-color: #e9ecef;
+$table-row-border-color: #dee2e6;
+$table-row-hover-border-color: #99bbed;
+$table-row-link-color: #515f6d;
+$table-row-icon-color: #515f6d;
+$table-row-icon-hover-color: #3789ff;
+
+$form-input-border-color: #e2e8f0;
+$form-input-border-focus-color: #cbd5e0;
+
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.form-control {
+  &:focus {
+    border: 1px solid #ced4da;
+    box-shadow: none;
+  }
+
+  &::placeholder {
+    color: #d4d4d4;
+    opacity: 1;
+  }
+}
+
+input[type="checkbox"]:focus + label::before, input[type="radio"]:focus + label::before, input[type="select"]:focus {
+  outline: none !important;
+  border-color: #adb5bd !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+a {
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  text-decoration: none;
+  color: $link-color;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+}
+
+body {
+  font-family: 'Nunito', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";;
+  font-size: .875rem;
+  background-color: $page-background;
+  color: $font-color;
+}
+
+.containerBox {
+  align-items: stretch;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.btn {
+  width: 120px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+  font-size: .875rem;
+  font-weight: 600;
+  border-radius: $border-radius;
+}
+
+.btn-primary, .btn-secondary {
+  color: #fff;
+  font-size: 0.95rem;
+  border-radius: $border-radius;
+}
+
+.btn-primary {
+  background-color: $btn-color;
+  border-color: $btn-color;
+}
+
+.btn-primary.focus, .btn-primary:focus, .btn-primary:hover {
+  color: #fff;
+  background-color: $btn-hover-color;
+  border-color: $btn-hover-color;
+}
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+  min-width: 0;
+  transition: margin-left .3s ease-in-out, left .3s ease-in-out, margin-right .3s ease-in-out, right .3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 992px) {
+    overflow-y: hidden;
+    width: 100vw;
+    min-width: 100vw;
+  }
+
+  .mainBoxHeader {
+    order: 1;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    background: $white-color;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+
+    .navbar {
+      position: relative;
+      padding: 0 1rem;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      height: 64px;
+
+      .sidebar-toggle {
+        font-size: 111%;
+        font-weight: 500;
+        padding-right: .5rem;
+        padding-left: .5rem;
+
+        &:hover {
+          color: $header-navbar-hover-color;
+        }
+      }
+
+      .nav-item {
+        .nav-link {
+          color: rgba(255, 255, 255, 0.75);
+          font-size: 120%;
+          font-weight: 500;
+          padding-right: .5rem;
+          padding-left: .5rem;
+
+          &:hover {
+            color: rgba(255, 255, 255, 1);
+          }
+        }
+
+        &.active > a {
+          color: rgba(255, 255, 255, 1);
+        }
+
+        &.navbar-user {
+          .sidebar-user-name, .sidebar-user-email {
+            text-align: right;
+            padding-right: 0.5rem;
+          }
+
+          .sidebar-user-name {
+            font-weight: 700;
+          }
+
+          .sidebar-user-email {
+            font-size: 80%;
+          }
+
+          .nav-link {
+            padding: 0 .5rem;
+
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+            }
+          }
+        }
+
+        &.myaccount {
+          display: none;
+        }
+
+        &.logout {
+          display: none;
+        }
+      }
+
+
+      .admikoGlobalSearch {
+        position: relative;
+        width: 50%;
+
+        input {
+          width: 100%;
+          border: 0;
+          border-radius: 0;
+          box-shadow: none;
+          background: transparent;
+          padding: .25rem .7rem;
+        }
+
+        .admikoGlobalSearchResults {
+          background: #fff;
+          min-width: 200px;
+          max-width: 500px;
+          max-height: 400px;
+          overflow: auto;
+          position: absolute;
+          z-index: 1000;
+          top: 100%;
+          left: 12px;
+          display: none;
+          padding: 0;
+          border: 1px solid $table-row-border-color;
+          border-radius: $border-radius;
+          box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1);
+
+          .noresults {
+            padding: 8px 12px;
+          }
+
+          a {
+            padding: 8px 12px 8px 20px;
+            display: block;
+            border-bottom: 1px dotted #dee2e6;
+
+            &:hover {
+              background-color: $table-row-bg-color;
+            }
+
+            &.modelPage {
+              padding: 8px 12px;
+              background: #fbfbfb;
+              font-weight: 600;
+            }
+          }
+
+          div:last-child a {
+            border-bottom: none;
+          }
+        }
+      }
+
+    }
+
+  }
+
+  .mainBoxBreadcrumb {
+    padding: 0 2.25rem;
+    margin: 0.6rem auto 0.5rem;
+    width: 95%;
+    order: 2;
+
+    .breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+      list-style: none;
+      background-color: transparent;
+      padding: 0;
+      border-radius: 0;
+
+      a {
+        //color: #dee2e6;
+        font-weight: 400;
+
+        &:hover {
+          color: $header-navbar-hover-color;
+        }
+      }
+
+      .breadcrumb-item {
+        i {
+          display: none;
+          padding-right: .5rem;
+        }
+      }
+
+      .breadcrumb-item + .breadcrumb-item {
+        padding-left: .25rem;
+      }
+
+      .breadcrumb-item + .breadcrumb-item::before {
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15'%3E%3Cpath d='M 7.293 14.707 a 1 1 0 0 1 0 -1.414 L 10.586 10 L 7.293 6.707 a 1 1 0 0 1 1.414 -1.414 l 4 4 a 1 1 0 0 1 0 1.414 l -4 4 a 1 1 0 0 1 -1.414 0 Z' fill='rgba(108, 117, 125)'/%3E%3C/svg%3E");
+      }
+
+      .active {
+        font-weight: 500;
+      }
+
+    }
+  }
+
+  .mainBoxTitle {
+    order: 3;
+    padding: 0 2.25rem;
+    margin: 0 auto 0 auto;
+    width: 95%;
+
+    h1 {
+      font-size: 150%;
+      margin-bottom: 0;
+      font-weight: 600;
+    }
+  }
+
+  .mainBoxInfo {
+    order: 4;
+    padding: 0 2.25rem;
+    margin: 0 auto;
+    width: 95%;
+    font-size: 90%;
+
+    &:empty {
+      display: none
+    }
+  }
+
+  .mainBoxBackBtn {
+    order: 5;
+    padding: 0 2.25rem;
+    margin: 0.5rem auto 0 auto;
+    width: 95%;
+
+    a {
+      font-weight: 400;
+      font-size: 90%;
+
+      &:hover {
+        color: $header-navbar-hover-color;
+      }
+    }
+  }
+
+  .mainBoxContent {
+    order: 6;
+    padding: 0 2.25rem;
+    margin: 1rem auto 0 auto;
+    width: 95%;
+
+    .container-fluid {
+      padding: 0;
+
+      .content {
+        margin-bottom: 3rem;
+      }
+
+      .content >.card {
+        border-radius: $border-radius;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+        border: unset;
+        background-color: $white-color;
+        margin-bottom: 3rem;
+
+        >.card-body, >form .card-body {
+          border-radius: $border-radius;
+          padding: 1.25rem 1.25rem;
+        }
+
+        >.card-footer, >form .card-footer {
+          padding: 1rem 1.25rem;
+        }
+      }
+    }
+
+  }
+}

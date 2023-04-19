@@ -1,0 +1,156 @@
+header {
+    &.toggled {
+        margin-left: -250px;
+    }
+    @media (max-width: 991.98px) and (min-width: 1px) {
+        margin-left: -250px;
+        &.toggled {
+            margin-left: 0;
+        }
+    }
+    width: 250px;
+    min-width: 250px;
+    max-width: 250px;
+    transition: margin-left .3s ease-in-out, left .3s ease-in-out, margin-right .3s ease-in-out, right .3s ease-in-out;
+    background: transparent;
+    border-right: 0;
+    z-index: 1;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    .navbar {
+        background: $header-bg-color;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100%;
+        padding: 0;
+        justify-content: flex-start;
+        .navbar-header {
+            background: $header-navbar-bg-color;
+            padding: 1rem;
+            width: 100%;
+            height: 64px;
+            a.navbar-brand {
+                padding: 0;
+                display: block;
+                margin: 0;
+                font-weight: 500;
+                font-size: 1rem;
+                line-height: 1;
+                text-align: center;
+                color: $header-navbar-brand-color;
+                img {
+                    max-height: 50px;
+                }
+            }
+        }
+
+        .sidebar {
+            width: 100%;
+            .sidebar-user {
+                padding: 1.5rem 1rem 1rem;
+                background: $white-color;
+                color: $header-sidebar-user-color;
+                text-align: center;
+                img {
+                    width: 64px;
+                    height: 64px;
+                    border-radius: 50%;
+                    margin-bottom: 0.5rem;
+                }
+                .sidebar-user-name {
+                    font-weight: 500;
+                }
+                .sidebar-user-email {
+                    font-size: 80%;
+                    font-weight: 400;
+                }
+            }
+            .nav-item {
+                margin: 0 .5rem;
+                .menu-title {
+                    background: transparent;
+                    color: $header-navbar-title-color;
+                    padding: .375rem .75rem;
+                    font-size: .75rem;
+                    font-weight: 500;
+                    text-transform: none;
+                }
+                a {
+                    display: block;
+                    padding: .65rem .75rem;
+                    color: $header-navbar-link-color;
+                    font-weight: 400;
+                    background: transparent;
+                    border-radius: .2rem;
+                    transition: background .1s ease-in-out;
+                    position: relative;
+                    text-decoration: none;
+                    font-size: 15px;
+                    cursor: pointer;
+                    i {
+                        margin: 0 12px 0 0;
+                        color: $header-navbar-icon-color;
+                    }
+                    &:hover {
+                        color: $header-navbar-hover-color;
+                        i {
+                            color: $header-navbar-hover-color;
+                        }
+                    }
+
+                }
+                &.active > a {
+                    color: $header-navbar-active-color;
+                    background: $header-navbar-link-bg-color;
+                }
+
+                &.dropdown {
+                    .dropdown-link:before {
+                        content: " ";
+                        border: solid;
+                        border-width: 0 .1rem .1rem 0;
+                        display: inline-block;
+                        padding: 2.5px;
+                        transform: rotate(-45deg);
+                        position: absolute;
+                        top: 1.05rem;
+                        right: 1.15rem;
+                        transition: all .2s ease-out;
+                    }
+                    &.open {
+                        .dropdown-link:before {
+                            transform: rotate(45deg);
+                        }
+                    }
+                    .dropdown-content {
+                        display: none;
+                        padding: 0;
+                        .nav-item {
+                            margin: 0;
+                            a {
+                                font-size: 90%;
+                                padding-left: 1.5rem;
+                            }
+                        }
+                    }
+                }
+                &.myaccount {
+                    //display: none;
+                }
+                &.logout {
+                    //display: none;
+                }
+            }
+        }
+    }
+    footer {
+        background: #fff;
+        padding: .375rem 1.5rem;
+        font-size: .75rem;
+        font-weight: 500;
+        a {
+            color: #adb5bd;
+        }
+    }
+}
