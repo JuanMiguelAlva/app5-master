@@ -2,7 +2,7 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "sanity build"
     },
     "devDependencies": {
         "axios": "^0.27",
