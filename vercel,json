@@ -9,7 +9,7 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/public/index.php"
+        "dest": "/resources/views/inicio.blade.php"
       }
     ]
   }
